@@ -1,7 +1,7 @@
 # PHPCpd-Action
 Run PHP Copy-Paste Detector in Github actions
 
-# Run [PHP Lint](https://github.com/sebastianbergmann/phpcpd) in Github Actions
+# Run [PHP copy-paste detector](https://github.com/sebastianbergmann/phpcpd) in Github Actions
 
 Usage
 -----
