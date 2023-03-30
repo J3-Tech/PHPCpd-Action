@@ -18,7 +18,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - id: PHP-CPD
-      uses: J3-Tech/PHPCpd-Action@v0.0.1
+      uses: J3-Tech/PHPCpd-Action@v0.0.2
       with:
         path: .
         exclude: vendor
@@ -31,3 +31,5 @@ The following configuration options are available:
 
 + `path` - A php source code filename or directory. Can be a comma-separated string
 + `exclude` - comma-separated string of patterns that are used to ignore directories.
++ `minLines` -  Minimum number of identical lines
++ `minTokens` - Minimum number of identical tokens
