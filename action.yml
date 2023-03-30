@@ -10,12 +10,24 @@ inputs:
     description: comma-separated string of patterns that are used to ignore directories. Use asterisks to exclude by pattern. For example *src/foo/*.php or *src/foo/*
     required: false
 
+  minLines:
+    description: Minimum number of identical lines
+    default: 5
+    required: false
+
+  minTokens:
+    description: Minimum number of identical tokens
+    default: 70
+    required: false
+
 runs:
   using: "composite"
   steps:
     - env:
         ACTION_PATH: ${{ inputs.path }}
         ACTION_EXCLUDE: ${{ inputs.exclude }}
+        ACTION_MINLINES: ${{ inputs.minLines }}
+        ACTION_MINTOKENS: ${{ inputs.minTokens }}
 
       id: phpcpd_run
       run: |

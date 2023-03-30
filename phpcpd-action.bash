@@ -13,6 +13,16 @@ then
 	command_string+=(--exclude "$ACTION_EXCLUDE")
 fi
 
+if [ -n "$ACTION_MINLINES" ]
+then
+	command_string+=(--min-lines "$ACTION_MINLINES")
+fi
+
+if [ -n "$ACTION_MINTOKENS" ]
+then
+	command_string+=(--min-tokens "$ACTION_MINTOKENS")
+fi
+
 docker run --rm \
 	--volume "${GITHUB_WORKSPACE}":/app \
 	--workdir /app \
